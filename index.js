@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Emergency Hotline</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-</head>
-<body class="bg-[#41FF6B]/10 min-h-screen antialiased">
-  <header class="bg-white w-full sticky top-0 z-40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3 min-w-0">
-        <img class="w-10 h-10 sm:w-12 sm:h-12" src="assets/logo.png" alt="logo">
-        <h1 class="text-lg sm:text-xl font-extrabold text-[#006747] leading-tight truncate">
-          Emergency<br class="hidden sm:block">Service
-        </h1>
-      </div>
+// CALL: spend coins, add history, block if not enough
+const callEls = document.getElementsByClassName("call");
+for (let i = 0; i < callEls.length; i++) {
+  callEls[i].addEventListener("click", function (e) {
+    const coinsEl = document.getElementById("coins");
+    const coins = parseInt(coinsEl.textContent, 10) || 0;
 
-      <div class="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
-        <p id="heart" class="min-w-[4.5rem] bg-[#41FF6B]/10 rounded-2xl flex items-center gap-2 justify-center font-semibold px-3 py-2 text-sm sm:text-base">
-          0 <img class="w-4 h-4" src="assets/heart.png" alt="heart">
-        </p>
-        <p id="coins" class="min-w-[4.5rem] bg-[#41FF6B]/10 rounded-2xl flex items-center gap-2 justify-center font-semibold px-3 py-2 text-sm sm:text-base">
-          100 <img class="w-4 h-4" src="assets/coin.png" alt="coin">
-        </p>
-        <p id="copy" class="min-w-[5.5rem] bg-[#00A63E] rounded-2xl font-semibold text-white px-3 py-2 flex items-center justify-center gap-2 text-sm sm:text-base">
-          <span id="copy-count">0</span> <span>Copy</span>
-        </p>
-      </div>
-    </div>
-  </header>
-  </body>
-</html>
+    // 🚨 If not enough coins, stop immediately
+    if (coins < 20) {
+      alert("Not enough coins! You need at least 20 to make a call.");
+      e.preventDefault(); // stop tel: link
+      return; // terminate handler
+    }
+
+    // ✅ Deduct 20 coins
+    const newCoins = coins - 20;
+    coinsEl.innerHTML = newCoins + ` <img class="max-w-5" src="assets/coin.png">`;
+
+    // Add to call history
+    const card = this.closest(".p-8") || this.closest("article");
+    const title = card ? (card.querySelector("h3")?.innerText.trim() || "Unknown Service") : "Unknown Service";
+    const number = card ? (card.querySelector("h1")?.innerText.trim() || "") : "";
+    const time = new Date().toLocaleTimeString("en-US", {
+      hour12: true,
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
+    });
