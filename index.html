@@ -27,10 +27,58 @@
           100 <img class="w-4 h-4" src="assets/coin.png" alt="coin">
         </p>
         <p id="copy" class="min-w-[5.5rem] bg-[#00A63E] rounded-2xl font-semibold text-white px-3 py-2 flex items-center justify-center gap-2 text-sm sm:text-base">
-          <span id="copy-count">0</span> <span>Copy</span>
+          <span id="copy-count">00</span> <span>Copy</span>
+
         </p>
       </div>
     </div>
   </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col items-center text-center gap-3">
+      <img class="w-16 sm:w-24" src="assets/logo-dark.png" alt="dark logo">
+      <h1 class="text-white text-xl sm:text-3xl font-extrabold">Emergency Service Directory</h1>
+      <p class="text-white/90 font-medium max-w-4xl text-sm sm:text-base">
+        Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+    <!-- Responsive 2-column layout: cards + sidebar -->
+    <div class="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8">
+      <!-- Cards Grid -->
+      <section class="flex-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <!-- Card component (repeat with different data) -->
+          <!-- Card 1 -->
+          <article class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
+            <div class="flex items-center justify-between">
+              <img class="w-12 sm:w-14 bg-[#FFE3E2] p-2 rounded-xl" src="assets/emergency.png" alt="">
+              <button type="button" class="text-gray-500 hover:text-red-500 transition">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="mt-4 sm:mt-5">
+              <h3 class="font-extrabold text-base sm:text-lg">National Emergency Number</h3>
+              <p class="text-gray-500 text-xs sm:text-sm">National Emergency</p>
+            </div>
+
+            <div class="mt-4 sm:mt-5">
+              <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">999</h1>
+              <p class="inline-block mt-2 px-3 py-1 bg-gray-100 text-gray-700 text-xs sm:text-sm rounded-xl">All</p>
+            </div>
+
+            <div class="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
+              <button type="button" class="copy flex-1 bg-white border border-gray-200 rounded-lg px-3 py-3 flex items-center justify-center gap-2 hover:bg-gray-50">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
+              <a href="tel:999" class="call flex-1 bg-green-500 text-white rounded-lg px-3 py-3 flex items-center justify-center gap-2 hover:bg-green-600">
+                <i class="fa-solid fa-phone"></i> Call
+              </a>
+            </div>
   </body>
 </html>
