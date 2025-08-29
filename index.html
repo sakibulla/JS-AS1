@@ -314,6 +314,47 @@
         </div>
       </section>
 
+<!-- Call History Sidebar (merged & responsive) -->
+      <aside class="w-full lg:w-96 shrink-0 mt-6 lg:mt-0">
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 lg:sticky lg:top-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i class="fa-regular fa-clock text-gray-700"></i>
+              <h3 class="font-semibold">Call History</h3>
+            </div>
+            <button id="clearHistoryBtn" class="bg-[#00A63E] text-white text-sm rounded-full px-4 py-1.5">Clear</button>
+          </div>
+
+          <div id="callHistory" class="mt-4 space-y-3">
+            <!-- Sample history items -->
+            <div class="bg-gray-50 rounded-xl px-4 py-3 flex items-start justify-between">
+              <div>
+                <div class="font-semibold leading-tight">Fire Service Number</div>
+                <div class="text-sm text-gray-500">999</div>
+              </div>
+              <div class="text-sm text-gray-500 whitespace-nowrap mt-1">11:36:58 AM</div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl px-4 py-3 flex items-start justify-between">
+              <div>
+                <div class="font-semibold leading-tight">National Emergency Number</div>
+                <div class="text-sm text-gray-500">1994-999999</div>
+              </div>
+              <div class="text-sm text-gray-500 whitespace-nowrap mt-1">11:36:58 AM</div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl px-4 py-3 flex items-start justify-between">
+              <div>
+                <div class="font-semibold leading-tight">Bangladesh Railway Helpline</div>
+                <div class="text-sm text-gray-500">163</div>
+              </div>
+              <div class="text-sm text-gray-500 whitespace-nowrap mt-1">11:36:58 AM</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
 
   </body>
 </html>
